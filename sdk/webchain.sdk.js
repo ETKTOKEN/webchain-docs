@@ -1,6 +1,6 @@
 // webchain-sdk.js
 const WebChainSDK = (function () {
-  const RPC_URL = "https://e-talk.xyz/wp-json/webchain/v1/rpc";
+  const RPC_URL = "https://rpc.webchain.e-talk.xyz";
 
   // Core function to make JSON-RPC calls
   async function rpc(method, params = []) {
