@@ -1,12 +1,12 @@
 # WebChain API Reference
 
-**Version 2.1** | Last updated: August 16, 2025
+**Version 2.1** | Last updated: October 7, 2025
 
 ## Overview
 
 WebChain is a high-performance, decentralized blockchain platform powering the E-TALK IKỌBỌ MARKETPLACE, enabling seamless e-commerce integration for global transactions. Built with WebRTC for direct peer-to-peer validator communication and EVM Wallets compatibility.
 
-**Base URL:** `https://e-talk.xyz/wp-json/webchain/v1`
+**Base URL:** `https://rpc.webchain.e-talk.xyz`
 
 ## Core Endpoints
 
@@ -29,7 +29,26 @@ WebChain is a high-performance, decentralized blockchain platform powering the E
 | `eth_getBlockByNumber` | ✅ | Returns block information |
 | `eth_getTransactionCount` | ✅ | Returns account nonce |
 
+### ETK-Specific JSON-RPC Methods
+| Method | Status | Description |
+|--------|--------|-------------|
+| `etk_sendRawTransaction` | ✅ | Broadcast ETK transaction with OTP support |
+| `etk_getBalance` | ✅ | Get ETK balance (on-chain) |
+| `etk_getTransactionCount` | ✅ | Get nonce for a wallet |
+| `etk_getBlockByNumber` | ✅ | Fetch block info by number |
+| `etk_getBlockByHash` | ✅ | Fetch block info by hash |
+| `etk_getTransactionByHash` | ✅ | Get transaction details by hash |
+| `etk_blockNumber` | ✅ | Latest block number |
+| `etk_syncing` | ✅ | Node syncing status |
+| `etk_chainId` | ✅ | WebChain chain ID |
+| `etk_gasPrice` | ✅ | Returns 0 ETK gas price |
+| `etk_getValidators` | ✅ | List of validators with balances |
+| `etk_getSupply` | ✅ | Total ETK supply |
+
 ### Validator Endpoints
+- All off-chain operations (withdrawals, transfers) require validator approval.
+- Validator wallets must stake **370 ETK** and maintain **0.0000001 ETK** balance on/off-chain.
+- OTP verification is required for critical transactions to ensure security.
 
 #### Verify Validator
 - **URL:** `/verify-validator`
@@ -468,7 +487,7 @@ To integrate WebChain with MetaMask, use the following configuration:
 const webchainConfig = {
   chainId: '0xF4241', // 1000001 in hex
   chainName: 'WebChain',
-  rpcUrls: ['https://e-talk.xyz/wp-json/webchain/v1/rpc'],
+  rpcUrls: ['https://rpc.webchain.e-talk.xyz'],
   blockExplorerUrls: ['https://e-talk.xyz/webchain/?tx='],
   nativeCurrency: {
     name: 'ikọbọ',
