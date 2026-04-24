@@ -67,6 +67,6 @@ The WebChain integration endpoints support the E-Talk Ikọbọ Marketplace, a h
 ## 6. Notes
 
 - **Security:** All integration endpoints require authentication and OTP verification to ensure secure transactions.
-- **API Base URL:** All endpoints are accessible via `https://e-talk.xyz/wp-json/webchain/v1`.
+- **API Base URL:** All endpoints are accessible via `https://rpc.webchain.e-talk.xyz/`.
 - **Network Information:** The WebChain JSON-RPC endpoint is active and ready, operating on the mainnet with version 1.0.0, as confirmed by the API status.
 - **Additional Endpoints:** For related functionality (e.g., verifying validator status or processing WooCommerce orders), refer to the `/verify-validator` and `/process-order` endpoints in the [WebChain API Reference](./API_REFERENCE.md).
