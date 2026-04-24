@@ -74,7 +74,7 @@ WebChain is a high-performance, decentralized blockchain platform powering the E
 ## Public Endpoints
 
 - **Get Chain Information**
-  - **URL:** `/webchain/v1`
+  - **URL:** `/rpc`
   - **Method:** GET
   - **Description:** Retrieves information about the WebChain namespace and available endpoints
 
@@ -346,7 +346,7 @@ WebChain is a high-performance, decentralized blockchain platform powering the E
   - **URL:** `/dex/debug-all-liquidity`
   - **Method:** GET
   - **Description:** Retrieves detailed debugging information for all liquidity pools
-  - **Authentication:** Required (Admin access)
+  - **Authentication:** Required
 
 ## Exchange Integration API
 
